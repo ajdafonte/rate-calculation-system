@@ -1,7 +1,7 @@
 package com.zopa.ratecalculation.error;
 
 /**
- *
+ * RateCalculatorException exception - Generic RateCalculator exception.
  */
 public class RateCalculatorException extends RuntimeException
 {

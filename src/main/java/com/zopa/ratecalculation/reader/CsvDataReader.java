@@ -9,7 +9,7 @@ import java.util.List;
 
 
 /**
- *
+ * CsvDataReader class - Contains all methods to know how to read a csv file.
  */
 public class CsvDataReader implements DataReader
 {
@@ -26,7 +26,6 @@ public class CsvDataReader implements DataReader
         final List<List<String>> records = new ArrayList<>();
         try (final BufferedReader br = new BufferedReader(new FileReader(filePath)))
         {
-            // in order to skip the header
             if (skipHeader)
             {
                 br.readLine();

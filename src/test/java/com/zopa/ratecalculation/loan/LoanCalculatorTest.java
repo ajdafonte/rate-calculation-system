@@ -18,13 +18,10 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.zopa.ratecalculation.error.RateCalculatorException;
-import com.zopa.ratecalculation.loan.domain.Lender;
-import com.zopa.ratecalculation.loan.domain.LoanRepaymentDetails;
-import com.zopa.ratecalculation.loan.repo.LenderRepository;
 
 
 /**
- *
+ * LoanCalculatorTest class - Test LoanCalculator class.
  */
 @ExtendWith(MockitoExtension.class)
 public class LoanCalculatorTest

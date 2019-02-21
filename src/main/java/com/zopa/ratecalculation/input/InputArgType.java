@@ -1,7 +1,7 @@
 package com.zopa.ratecalculation.input;
 
 /**
- *
+ * InputArgType enum - Describes and contains details about the allowed input arguments.
  */
 public enum InputArgType
 {

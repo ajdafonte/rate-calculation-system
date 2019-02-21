@@ -5,7 +5,7 @@ import com.zopa.ratecalculation.util.Util;
 
 
 /**
- *
+ * InputArgHandler class - Contains all methods to handle input arguments.
  */
 public class InputArgHandler
 {
@@ -56,7 +56,7 @@ public class InputArgHandler
             + NEW_LINE
             + ">> Arguments allowed: <filePath> <loan amount>"
             + NEW_LINE
-            + ">> Example to start Rate Calculation System: RateCalculatorStartup <filePath> <loan amount>"
+            + ">> Example to start Rate Calculation System: <appName> <filePath> <loan amount>"
             + NEW_LINE
             + ">> Constraints:"
             + NEW_LINE

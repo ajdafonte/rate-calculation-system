@@ -5,11 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
 
-import com.zopa.ratecalculation.loan.domain.Lender;
-
 
 /**
- *
+ * LenderTest class - Test Lender class.
  */
 public class LenderTest
 {
@@ -18,33 +16,35 @@ public class LenderTest
     private static final double MOCK_RATE1 = 0.051;
     private static final double MOCK_AMOUNT1 = 1000;
 
-    private static Lender generateLender(final String name, final double rate, final double availableAmount)
+    private static Lender generateLender(final String name)
     {
         return new Lender.LenderBuilder()
             .withName(name)
-            .withRate(rate)
-            .withAvailableAmount(availableAmount)
+            .withRate(LenderTest.MOCK_RATE1)
+            .withAvailableAmount(LenderTest.MOCK_AMOUNT1)
             .build();
     }
 
     @Test
-    public void givenTwoEqualLenders_whenCheckIfEquals_thenReturnTrue()
+    public void givenTwoEqualLenders_whenCheckIfEquals_thenReturnOk()
     {
         // given
-        final Lender mockLender1 = generateLender(MOCK_NAME1, MOCK_RATE1, MOCK_AMOUNT1);
-        final Lender mockLender2 = generateLender(MOCK_NAME1, MOCK_RATE1, MOCK_AMOUNT1);
+        final Lender mockLender1 = generateLender(MOCK_NAME1);
+        final Lender mockLender2 = generateLender(MOCK_NAME1);
 
+        // when + then
         assertEquals(mockLender1.hashCode(), mockLender2.hashCode());
         assertEquals(mockLender1, mockLender2);
     }
 
     @Test
-    public void givenTwoDifferentLenders_whenCheckIfEquals_thenReturnFalse()
+    public void givenTwoDifferentLenders_whenCheckIfEquals_thenReturnNok()
     {
         // given
-        final Lender mockLender1 = generateLender(MOCK_NAME1, MOCK_RATE1, MOCK_AMOUNT1);
-        final Lender mockLender2 = generateLender(MOCK_NAME2, MOCK_RATE1, MOCK_AMOUNT1);
+        final Lender mockLender1 = generateLender(MOCK_NAME1);
+        final Lender mockLender2 = generateLender(MOCK_NAME2);
 
+        // when + then
         assertNotEquals(mockLender1.hashCode(), mockLender2.hashCode());
         assertNotEquals(mockLender1, mockLender2);
     }
@@ -53,7 +53,7 @@ public class LenderTest
     public void givenLender_whenCallToString_thenReturnExpectedValue()
     {
         // given
-        final Lender mockLender1 = generateLender(MOCK_NAME1, MOCK_RATE1, MOCK_AMOUNT1);
+        final Lender mockLender1 = generateLender(MOCK_NAME1);
         final String expected = "LenderData{" +
             "name='" + MOCK_NAME1 + '\'' +
             ", rate=" + MOCK_RATE1 +

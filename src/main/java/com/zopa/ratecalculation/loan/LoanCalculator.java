@@ -5,14 +5,11 @@ import java.util.Comparator;
 import java.util.List;
 
 import com.zopa.ratecalculation.error.RateCalculatorException;
-import com.zopa.ratecalculation.loan.domain.Lender;
-import com.zopa.ratecalculation.loan.domain.LoanRepaymentDetails;
-import com.zopa.ratecalculation.loan.repo.LenderRepository;
 import com.zopa.ratecalculation.util.Util;
 
 
 /**
- *
+ * LoanCalculator interface - Contains all the methods related with loan calculations.
  */
 public class LoanCalculator implements ILoanCalculator
 {
@@ -32,7 +29,6 @@ public class LoanCalculator implements ILoanCalculator
         {
             // get all lenders available in market
             final List<Lender> lenders = lenderRepository.findAll(filePath);
-//            final List<Lender> lenders = LenderMapper.mapFromReader(reader.readDataFile(filePath, true));
 
             // get lender with lowest rate
             final Lender lender = getLenderWithLowestRateForLoan(lenders, loanAmount);
@@ -42,7 +38,7 @@ public class LoanCalculator implements ILoanCalculator
         }
         catch (final IOException e)
         {
-            throw new RateCalculatorException("Unable to read data from " + filePath);
+            throw new RateCalculatorException("Unable to retrieve lenders information.");
         }
     }
 

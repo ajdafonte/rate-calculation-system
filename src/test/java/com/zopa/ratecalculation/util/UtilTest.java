@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 
 
 /**
- *
+ * UtilTest class - Test Util class.
  */
 public class UtilTest
 {
@@ -65,7 +65,7 @@ public class UtilTest
 
     // test file exist
     @Test
-    public void givenExistentFile_whenCheckIfFileExists_returnValid()
+    public void givenExistentFile_whenCheckIfFileExists_thenReturnValid()
     {
         // given
         final String filePath = "src/test/resources/test.csv";
@@ -76,7 +76,7 @@ public class UtilTest
 
     // test file does not exist
     @Test
-    public void givenUnknownFile_whenValidatingFileInput_returnInvalid()
+    public void givenUnknownFile_whenValidatingFileInput_thenReturnInvalid()
     {
         // given
         final String filePath = "src/test/resources/unknown.csv";
@@ -91,16 +91,16 @@ public class UtilTest
     {
         // given
         final double[] rates = {
-            7
+            7, 6.7
         };
         final int[] numPayments = {
-            36
+            36, 24
         };
         final double[] amounts = {
-            1000
+            1000, 15000
         };
         final double[] expectedValues = {
-            30.877096865371833
+            30.877096865371833, 669.5505023486377
         };
 
         // when

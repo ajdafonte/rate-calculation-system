@@ -13,7 +13,7 @@ import com.zopa.ratecalculation.error.InputArgException;
 
 
 /**
- *
+ * InputArgHandlerTest class - Test InputArgHandler class.
  */
 public class InputArgHandlerTest
 {
@@ -193,7 +193,7 @@ public class InputArgHandlerTest
             + newLine
             + ">> Arguments allowed: <filePath> <loan amount>"
             + newLine
-            + ">> Example to start Rate Calculation System: RateCalculatorStartup <filePath> <loan amount>"
+            + ">> Example to start Rate Calculation System: <appName> <filePath> <loan amount>"
             + newLine
             + ">> Constraints:"
             + newLine

@@ -19,13 +19,11 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import com.zopa.ratecalculation.loan.domain.Lender;
-import com.zopa.ratecalculation.loan.repo.LenderRepository;
 import com.zopa.ratecalculation.reader.DataReader;
 
 
 /**
- *
+ * LenderRepositoryTest class - Test LenderRepository class.
  */
 @ExtendWith(MockitoExtension.class)
 public class LenderRepositoryTest
@@ -73,7 +71,6 @@ public class LenderRepositoryTest
             .withRate(rate)
             .withAvailableAmount(availableAmount)
             .build();
-
     }
 
     @BeforeEach

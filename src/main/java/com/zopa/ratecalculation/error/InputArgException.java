@@ -1,7 +1,7 @@
 package com.zopa.ratecalculation.error;
 
 /**
- *
+ * InputArgException exception - Related with input argument handling.
  */
 public class InputArgException extends Exception
 {

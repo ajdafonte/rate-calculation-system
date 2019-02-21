@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 
 /**
- *
+ * InputArgTypeTest class - Test InputArgType enum.
  */
 public class InputArgTypeTest
 {

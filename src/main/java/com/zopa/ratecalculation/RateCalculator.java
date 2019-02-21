@@ -4,20 +4,20 @@ import com.zopa.ratecalculation.error.InputArgException;
 import com.zopa.ratecalculation.error.RateCalculatorException;
 import com.zopa.ratecalculation.input.InputArgHandler;
 import com.zopa.ratecalculation.loan.ILoanCalculator;
-import com.zopa.ratecalculation.loan.domain.LoanRepaymentDetails;
+import com.zopa.ratecalculation.loan.LoanRepaymentDetails;
 
 
 /**
- *
+ * RateCalculator class - Describes the main functionality of the system.
  */
-class RateCalculatorSystem
+class RateCalculator
 {
     private final InputArgHandler inputArgHandler;
     private final ILoanCalculator loanCalculator;
     private final String currencySymbol;
 
-    RateCalculatorSystem(final InputArgHandler inputArgHandler, final ILoanCalculator loanCalculator,
-                         final String currencySymbol)
+    RateCalculator(final InputArgHandler inputArgHandler, final ILoanCalculator loanCalculator,
+                   final String currencySymbol)
     {
         this.inputArgHandler = inputArgHandler;
         this.loanCalculator = loanCalculator;
@@ -28,14 +28,12 @@ class RateCalculatorSystem
     {
         try
         {
-            // validate input args
+            // validate and retrieve input args
             inputArgHandler.validateInputArgs(args);
-
-            // get valid args
             final String filePath = inputArgHandler.getFilePath(args);
             final String loanAmount = inputArgHandler.getLoanAmount(args);
 
-            // calculate and show LowestLoanRepayment
+            // calculate and show results about the lowest loan repayment
             final LoanRepaymentDetails loanRepaymentDetails =
                 loanCalculator.getLowestLoanRepaymentDetails(filePath, Integer.parseInt(loanAmount));
             showResults(currencySymbol, loanRepaymentDetails);
@@ -63,7 +61,7 @@ class RateCalculatorSystem
         else
         {
             System.out.println(
-                "Sorry, but unfortunately it was not possible to provide the lowest loan repayment details for the loan amount indicated");
+                "Sorry, but unfortunately it was not possible to provide the lowest loan repayment details for the loan amount indicated.");
         }
     }
 

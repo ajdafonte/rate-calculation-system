@@ -1,10 +1,10 @@
-package com.zopa.ratecalculation.loan.domain;
+package com.zopa.ratecalculation.loan;
 
 import java.util.Objects;
 
 
 /**
- *
+ * LoanRepaymentDetails class - Describes the loan repayment information.
  */
 public class LoanRepaymentDetails
 {
@@ -13,38 +13,38 @@ public class LoanRepaymentDetails
     private final double totalAmount;
     private final double monthlyAmount;
 
-    public static class LoanRepaymentDetailsBuilder
+    static class LoanRepaymentDetailsBuilder
     {
         private int requestedAmount;
         private double rate;
         private double totalAmount;
         private double monthlyAmount;
 
-        public LoanRepaymentDetailsBuilder withRequestedAmount(final int requestedAmount)
+        LoanRepaymentDetailsBuilder withRequestedAmount(final int requestedAmount)
         {
             this.requestedAmount = requestedAmount;
             return this;
         }
 
-        public LoanRepaymentDetailsBuilder withRate(final double rate)
+        LoanRepaymentDetailsBuilder withRate(final double rate)
         {
             this.rate = rate;
             return this;
         }
 
-        public LoanRepaymentDetailsBuilder withTotalAmount(final double totalAmount)
+        LoanRepaymentDetailsBuilder withTotalAmount(final double totalAmount)
         {
             this.totalAmount = totalAmount;
             return this;
         }
 
-        public LoanRepaymentDetailsBuilder withMonthlyAmount(final double monthlyAmount)
+        LoanRepaymentDetailsBuilder withMonthlyAmount(final double monthlyAmount)
         {
             this.monthlyAmount = monthlyAmount;
             return this;
         }
 
-        public LoanRepaymentDetails build()
+        LoanRepaymentDetails build()
         {
             // call the private constructor in the outer class
             return new LoanRepaymentDetails(this);
